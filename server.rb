@@ -38,6 +38,7 @@ end
 post '/festivals' do
   if logged_in?
     @festival = Festival.new(@params)
+    @festival.owner = current_user
     if @festival.save
       erb :festival
     else
@@ -80,6 +81,11 @@ post '/festival/:id/edit' do
   if logged_in?
     begin
       @festival = Festival.find(@params['id'])
+
+      unless current_user == @festival.owner
+        redirect to ("/festival/#{@params['id']}")
+      end
+
       @festival.name = @params['name']
       @festival.location = @params['location']
       @festival.date = @params['date']
@@ -170,6 +176,9 @@ end
 # Processes the edit form
 post '/user/:id/edit' do
   if logged_in?
+    unless session[:user_id] == @params["id"].to_i
+      redirect to ("/user/#{@params['id']}")
+    end
     begin
       @user = User.find(@params['id'])
       @user.username = @params['username']

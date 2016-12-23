@@ -27,10 +27,17 @@ img.size_profile_small {
 }
 .festival_text {
   float: left;
+  width: 50%;
 }
+
 .festival_image {
   float: right;
   padding-bottom: 20px;
+  width: 50%;
+}
+
+.festival_image img {
+  max-width: 95%; 
 }
 
 #container {
