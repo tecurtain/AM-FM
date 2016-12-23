@@ -11,13 +11,13 @@
           <a href="/attended_festival/<%= @festival.id %>">Festival Attendees</a>
             <br>
             <br>
-          <button class="delete_button" type="submit">Delete Festival</button>
-          <br>
-          <br>
-          <input type='hidden' name="_method" value='delete'>
-      <form method="post" action="/festival/<%= @festival.id %>">
 
+      <form method="post" action="/festival/<%= @festival.id %>">
+        <input type='hidden' name="_method" value='delete'>
+        <button class="delete_button" type="submit">Delete Festival</button>
       </form>
+      <br>
+      <br>
     </div>
     <div class="festival_image">
       <img class= 'size_festival' src="<%= @festival['image_url'] %>">
