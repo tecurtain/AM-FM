@@ -1,0 +1,11 @@
+<h2 class='wrapper'>Users</h2>
+<div class="wrapper">
+  <% @festival.users.each do |festival| %>
+  <a href="/user/<%= festival.id %>"><%= festival.print_values %>
+    <figure class="image_grid">
+      <img class="size_profile_small image_grid" src="<%= festival.profile_image %>" />
+    </figure>
+  </a>
+  <% end %>
+</div>
+    

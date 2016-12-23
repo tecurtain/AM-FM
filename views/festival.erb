@@ -1,0 +1,23 @@
+<div>
+    <div class="festival_text" align="center">
+      <a href="/festival_list">Back to Festivals</a>
+        <h2><%= @festival.name %></h2>
+          <p>Location: <%= @festival.location %></p>
+          <p>Start Date: <%= @festival.date %></p>
+          <p>Ticket Price: $<%= @festival.cost %></p>
+          <a href="/festival/<%= @festival.id %>/edit">Edit Festival</a>
+            <br>
+            <br>
+          <a href="/attended_festival/<%= @festival.id %>">Festival Attendees</a>
+            <br>
+            <br>
+          <button class="delete_button" type="submit">Delete Festival</button>
+          <br>
+          <br>
+          <input type='hidden' name="_method" value='delete'>
+      <form method="post" action="/festival/<%= @festival.id %>">
+
+      </form>
+    </div>
+    <p><img class= 'size_festival festival_image' src="<%= @festival['image_url'] %>"></p>
+</div>

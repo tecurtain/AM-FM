@@ -1,0 +1,22 @@
+
+<div>
+    <div class="festival_text" align="center">
+      <a href="/user_list">Back to Users</a>
+          <p><%= @user.first_name %> <%= @user.last_name %></p>
+          <p>Email: <%= @user.email %></p>
+          <p>Bio: <%= @user.bio %></p>
+          <p>Phone Number: <%= @user.phone %></p>
+          <p>Age: <%= @user.age %></p>
+          <a href="/user/<%= @user.id %>/edit">Edit User</a>
+          <p><a href="/festival_attendance/<%= @user.id %>">Festival Attendance</a></p>
+
+            <form method="post" action="/user/<%= @user.id %>">
+            </br>
+              <input type='hidden' name='_method' value='delete'/>
+              <button class="delete_button">Delete User</button>
+              <br>
+              <br>
+            </form>
+    </div>
+    <p><img class="size_profile festival_image" src="<%= @user['profile_image'] %>"></p>
+</div>
