@@ -1,6 +1,6 @@
 <div class='outer_form'>
   <div class='form_div'>
-    <form action="/festival/edit/<%= @festival['id'] %>" method="post">
+    <form action="/festival/<%= @festival['id'] %>/edit" method="post">
       <h2 align= 'center'>Edit Festival</h2>
       <label for="name">Festival Name</label>
       <input class ='form_text' type="text" id='name' name="name" value="<%= @festival['name'] %>"/>
